@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Application</title>
+
+  <script src="bower_components/riot/riot+compiler.min.js"></script>
+  <!-- include the tags -->
+  <script src="tags/grid-events.html" type="riot/tag"></script>
+
+  <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.min.css">
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/semantic/dist/semantic.min.js"></script>
+
+</head>
+<body class="ui container">
+  <h1>Application</h1>
+
+  <grid-events></grid-events>
+
+  <script>
+   require('./renderer');
+  </script>
+
+</body>
+</html>

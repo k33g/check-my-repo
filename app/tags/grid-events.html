@@ -1,0 +1,48 @@
+<grid-events>
+  <h2>Repositrory Events on branch {ref}</h2>
+
+  <h3>Commits:</h3>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>sha</th>
+        <th>author</th>
+        <th>message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr each={commits}>
+        <td><a href={url} target="_blank">{sha}</a></td>
+        <td>{author.email} {author.name}</td>
+        <td>{message}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Files:</h3>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>sha</th>
+        <th>filename</th>
+        <th>status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr each={filesList}>
+        <td>{sha}</td>
+        <td>{filename}</td>
+        <td>status:{status} additions:{additions} deletions:{deletions} changes:{changes}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    opts.ipcRenderer.on('PushEvent', (event, arg) => {
+      this.ref = arg.ref
+      this.commits = arg.commits
+      this.filesList = arg.filesList
+      this.update();
+    });
+  </script>
+</grid-events>

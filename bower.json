@@ -1,0 +1,13 @@
+{
+  "name": "check-my-repo",
+  "description": "check-my-repo",
+  "main": "./app/main.js",
+  "authors": [
+    "@k33g"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "riot": "^2.5.0",
+    "semantic": "semantic-ui#^2.2.2"
+  }
+}
